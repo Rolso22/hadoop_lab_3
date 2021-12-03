@@ -1,4 +1,7 @@
 package ru.bmstu.hadoop.labs;
 
-public class Flight {
+import java.io.Serializable;
+
+public class Flight implements Serializable {
+
 }

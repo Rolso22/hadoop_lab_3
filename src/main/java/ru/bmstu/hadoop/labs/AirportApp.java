@@ -18,7 +18,9 @@ public class AirportApp {
                     return new Tuple2<>(lineParts[0], lineParts[1]);
                 }).collectAsMap();
 
-        JavaRDD<String> flights = sc.textFile("664600583_T_ONTIME_sample.csv");
-        JavaPairRDD<Tuple2<String, String>, Flight>
+        JavaRDD<String> flightsFile = sc.textFile("664600583_T_ONTIME_sample.csv");
+        JavaPairRDD<Tuple2<String, String>, Flight> flights = flightsFile.flatMapToPair(str -> {
+
+        });
     }
 }
