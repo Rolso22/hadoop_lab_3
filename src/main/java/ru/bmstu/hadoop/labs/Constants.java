@@ -10,4 +10,5 @@ public class Constants {
     public static final String DELIMITER_COMMA_WITH_QUOTES = "\",\"";
     public static final String DELIMITER_COMMA = ",";
     public static final String CODE = "code";
+    public static final String YEAR = "year";
 }
