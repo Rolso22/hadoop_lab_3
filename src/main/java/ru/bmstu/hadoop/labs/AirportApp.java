@@ -10,6 +10,8 @@ public class AirportApp {
         SparkConf conf = new SparkConf().setAppName("AirportApp_lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> airportFile = sc.textFile("L_AIRPORT_ID.csv");
-        JavaPairRDD<String, String> 
+        JavaPairRDD<String, String> airportMap = airportFile.flatMapToPair(
+                String[] 
+        )
     }
 }
