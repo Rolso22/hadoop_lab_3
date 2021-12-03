@@ -24,7 +24,11 @@ public class Flight implements Serializable {
         boolean isDelayed = maxDelay > 0;
         //return new Flight(maxDelay, isCancelled, isDelayed ? 1 : 0, isCancelled ? 1 : 0, 1);
         return new Function<String, Flight>() {
-            
+
+            @Override
+            public Flight call(String s) throws Exception {
+                return null;
+            }
         }
     }
 }
