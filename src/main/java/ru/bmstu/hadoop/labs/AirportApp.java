@@ -18,6 +18,6 @@ public class AirportApp {
                     return new Tuple2<>(lineParts[0], lineParts[1]);
                 }).collectAsMap();
 
-        JavaRDD<>
+        JavaRDD<String> flights = sc.textFile()
     }
 }
