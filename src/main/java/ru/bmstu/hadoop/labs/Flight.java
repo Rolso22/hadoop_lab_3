@@ -25,8 +25,9 @@ public class Flight implements Serializable {
     public Flight mergeCombine(Flight flight) {
         maxDelay = Math.max(flight.maxDelay, maxDelay);
         flightCount++;
-        if (flight.delayedCount > 0) delayedCount++;
-        if (flight.cancelledCount > 0) cancelledCount++;
-        
+        delayedCount += flight.delayedCount;
+        cancelledCount += flight.cancelledCount;
+        return this;
+
     }
 }
