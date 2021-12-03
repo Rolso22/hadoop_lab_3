@@ -8,7 +8,7 @@ public class AirportApp {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("AirportApp_lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<String> airportFile = sc.textFile()
+        JavaRDD<String> airportFile = sc.textFile();
 
     }
 }
