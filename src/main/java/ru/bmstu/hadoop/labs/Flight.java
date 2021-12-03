@@ -38,7 +38,8 @@ public class Flight implements Serializable {
     }
 
     public static String getResult(Tuple2<Tuple2<String, String>, Flight> ports, Map<String, String> map) {
-        String delayedProportion = (ports._2.delayedCount / ports._2.flightCount) * 100 + "%";
+        String delayedProportion = ((float) ports._2.delayedCount / (float) ports._2.flightCount) * 100 + "%";
+        String cancelledProportion = ((float) ports._2.cancelledCount / (float) ports._2.flightCount) * 100 + "%";
         
     }
 }
