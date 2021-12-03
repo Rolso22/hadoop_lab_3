@@ -43,9 +43,9 @@ public class Flight implements Serializable {
         String originPort = map.get(ports._1._1);
         String destPort = map.get(ports._1._2);
         String maxDelay = String.valueOf(ports._2.maxDelay);
-        StringBuilder result = new StringBuilder().append(originPort).append(" -> ").append(destPort).append("\n")
-                .append("maxDelay: ").append(maxDelay).append("\n")
-                .append("")
-        return
+        return originPort + " -> " + destPort + "\n" +
+                "\tmaxDelay: " + maxDelay + "\n" +
+                "\tdelayed: " + delayedProportion + "\n" +
+                "\tcancelled" + cancelledProportion + "\n\n";
     }
 }
