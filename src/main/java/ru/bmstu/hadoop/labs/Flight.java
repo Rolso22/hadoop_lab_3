@@ -1,8 +1,6 @@
 package ru.bmstu.hadoop.labs;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import scala.Tuple2;
-
 import java.io.Serializable;
 import java.util.Map;
 
