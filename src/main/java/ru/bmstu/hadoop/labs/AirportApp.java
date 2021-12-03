@@ -32,7 +32,7 @@ public class AirportApp {
                     String delay = lineParts[DELAY_TIME_INDEX];
                     return new Tuple2<>(new Tuple2<>(originPort, destPort), delay);
                 })
-                .combineByKey(Flight.createFlight(), new MergeValue(), new MergeCombiners());
+                .combineByKey(new CreateCombiner(), new MergeValue(), new MergeCombiners());
         final Broadcast<Map<String, String>> airportsBroadcasted = sc.broadcast(airportMap);
         JavaRDD<String> result = flights.map(ports -> Flight.getResult(ports, airportsBroadcasted.getValue()));
         result.saveAsTextFile("result");
