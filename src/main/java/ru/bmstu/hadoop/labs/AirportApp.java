@@ -10,7 +10,9 @@ import scala.Tuple2;
 import static ru.bmstu.hadoop.labs.Constants.*;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class AirportApp {
     public static void main(String[] args) {
@@ -29,7 +31,7 @@ public class AirportApp {
                 .filter(str -> !str.contains(YEAR))
                 .mapToPair(str -> {
                     String[] lineParts = str.split(DELIMITER_COMMA_WITH_QUOTES);
-                    Arrays.stream(lineParts).map(s -> s.replaceAll("\"", ""));
+                    lineParts = Arrays.stream(lineParts).map(x -> x.replaceAll("\'", "")).collect(Collectors.toList());
                     String originPort = lineParts[ORIGIIN_AIRPORT];
                     String destPort = lineParts[DEST_AIRPORT];
                     String delay = lineParts[DELAY_TIME_INDEX];
