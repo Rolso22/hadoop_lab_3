@@ -24,7 +24,7 @@ public class Flight implements Serializable {
         return new Flight(maxDelay, isCancelled, isDelayed ? 1 : 0, isCancelled ? 1 : 0, 1);
     }
 
-    public static void mergeCombine(Flight flight) {
+    public static Flight mergeCombine(Flight flight) {
         
     }
 }
