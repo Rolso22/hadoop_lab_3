@@ -18,6 +18,6 @@ public class Flight implements Serializable {
     }
 
     public static Flight createFlight(String delay) {
-        maxDelay
+        maxDelay = 
     }
 }
