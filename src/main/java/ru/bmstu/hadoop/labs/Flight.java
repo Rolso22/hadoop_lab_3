@@ -23,12 +23,6 @@ public class Flight implements Serializable {
         float maxDelay = isCancelled ? 0 : Float.parseFloat(delay);
         boolean isDelayed = maxDelay > 0;
         //return new Flight(maxDelay, isCancelled, isDelayed ? 1 : 0, isCancelled ? 1 : 0, 1);
-        return new Function<String, Flight>() {
-
-            @Override
-            public Flight call(String s) throws Exception {
-                return null;
-            }
-        }
+        return (Function<String, Flight>) s -> new Flight(maxDelay, isCancelled, isDelayed ? 1 : 0, isCancelled ? 1 : 0, 1)
     }
 }
