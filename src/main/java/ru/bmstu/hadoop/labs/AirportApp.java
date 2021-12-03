@@ -11,7 +11,7 @@ public class AirportApp {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> airportFile = sc.textFile("L_AIRPORT_ID.csv");
         JavaPairRDD<String, String> airportMap = airportFile.flatMapToPair(
-                String[] 
+                String[] lineParts = 
         )
     }
 }
