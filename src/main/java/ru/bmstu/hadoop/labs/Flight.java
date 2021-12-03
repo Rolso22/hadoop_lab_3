@@ -42,9 +42,10 @@ public class Flight implements Serializable {
         String cancelledProportion = ((float) ports._2.cancelledCount / (float) ports._2.flightCount) * 100 + "%";
         String originPort = map.get(ports._1._1);
         String destPort = map.get(ports._1._2);
-        String maxDelay = ports._1._2.
+        String maxDelay = String.valueOf(ports._2.maxDelay);
         StringBuilder result = new StringBuilder().append(originPort).append(" -> ").append(destPort).append("\n")
-                .append("maxDelay").append()
+                .append("maxDelay: ").append(maxDelay).append("\n")
+                .append("")
         return
     }
 }
