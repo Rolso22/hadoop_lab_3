@@ -33,7 +33,8 @@ public class AirportApp {
                     return new Tuple2<>(new Tuple2<>(originPort, destPort), delay);
                 })
                 .combineByKey(new CreateCombiner(), new MergeValue(), new MergeCombiners());
-        final Broadcast<Map<String, String>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
+        final Broadcast<Map<String, String>> airportsBroadcasted = sc.broadcast(airportMap);
+        
     }
 
 }
