@@ -13,7 +13,7 @@ public class AirportApp {
         JavaRDD<String> airportFile = sc.textFile("L_AIRPORT_ID.csv");
         JavaPairRDD<String, String> airportMap = airportFile.flatMapToPair(str -> {
                     String[] lineParts = str.split(",");
-                    return new Tuple2<>(lineParts[0], lineParts[1])
+                    return new Tuple2<>(lineParts[0], lineParts[1]);
                 }
         )
     }
