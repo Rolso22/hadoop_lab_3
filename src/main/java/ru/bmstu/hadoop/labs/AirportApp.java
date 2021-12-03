@@ -4,6 +4,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
 import static ru.bmstu.hadoop.labs.Constants.*;
@@ -32,7 +33,7 @@ public class AirportApp {
                     return new Tuple2<>(new Tuple2<>(originPort, destPort), delay);
                 })
                 .combineByKey(new CreateCombiner(), new MergeValue(), new MergeCombiners());
-
+        final Broadcast<Map<String, Flight>> airportsBroadcasted = sc.broadcast(stringAirportDataMap);
     }
 
 }
