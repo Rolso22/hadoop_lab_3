@@ -3,6 +3,7 @@ package ru.bmstu.hadoop.labs;
 import scala.Tuple2;
 
 import java.io.Serializable;
+import java.util.Map;
 
 public class Flight implements Serializable {
     private float maxDelay;
@@ -32,5 +33,5 @@ public class Flight implements Serializable {
         return this;
     }
 
-    public static String getResult(Tuple2<Tuple2<String, String>, Flight> )
+    public static String getResult(Tuple2<Tuple2<String, String>, Flight> ports, Map<String, String> )
 }
