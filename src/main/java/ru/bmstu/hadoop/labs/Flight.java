@@ -17,7 +17,7 @@ public class Flight implements Serializable {
         this.flightCount = flightCount;
     }
 
-    public static void createFlight(String delay) {
-        
+    public static Flight createFlight(String delay) {
+
     }
 }
