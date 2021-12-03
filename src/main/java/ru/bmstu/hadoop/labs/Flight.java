@@ -28,6 +28,7 @@ public class Flight implements Serializable {
         delayedCount += flight.delayedCount;
         cancelledCount += flight.cancelledCount;
         return this;
-
     }
+
+    public static 
 }
