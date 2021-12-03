@@ -14,7 +14,7 @@ public class AirportApp {
         JavaPairRDD<String, String> airportMap = airportFile.flatMapToPair(str -> {
                     String[] lineParts = str.split(",");
                     return new Tuple2<>(lineParts[0], lineParts[1]);
-                }).collectAsMap();
+                }).collect
 
     }
 }
