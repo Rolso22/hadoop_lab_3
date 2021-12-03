@@ -26,7 +26,7 @@ public class AirportApp {
                 .filter(str -> !str.contains(YEAR))
                 .flatMapToPair(str -> {
                     String[] lineParts = str.split(",");
-                    
+
 
         });
     }
