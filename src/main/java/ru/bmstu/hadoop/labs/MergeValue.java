@@ -1,4 +1,11 @@
 package ru.bmstu.hadoop.labs;
 
-public class MergeValue {
+import org.apache.spark.api.java.function.Function;
+
+public class MergeValue implements Function<String, Flight> {
+
+    @Override
+    public Flight call(String s) throws Exception {
+        return null;
+    }
 }
