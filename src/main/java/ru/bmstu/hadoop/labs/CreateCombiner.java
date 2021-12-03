@@ -1,4 +1,6 @@
 package ru.bmstu.hadoop.labs;
 
-public class CreateCombiner {
+import java.util.function.Function;
+
+public class CreateCombiner implements Function {
 }
