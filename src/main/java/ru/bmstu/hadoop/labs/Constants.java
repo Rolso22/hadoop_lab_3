@@ -2,8 +2,8 @@ package ru.bmstu.hadoop.labs;
 
 public class Constants {
     public static final int DELAY_TIME_INDEX = 18;
-    public static final int AIRPORT_INDEX = 14;
-    public static final int ORIGIIN_AIRPORT = 14;
+    public static final int DEST_AIRPORT = 14;
+    public static final int ORIGIIN_AIRPORT = 11;
     public static final int AIRPORT_FLAG = 0;
     public static final int FLIGHT_FLAG = 1;
     public static final int CODE_INDEX = 0;
