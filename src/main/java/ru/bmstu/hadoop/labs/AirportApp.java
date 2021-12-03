@@ -8,6 +8,8 @@ import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
 import static ru.bmstu.hadoop.labs.Constants.*;
+
+import java.util.Arrays;
 import java.util.Map;
 
 public class AirportApp {
@@ -26,7 +28,8 @@ public class AirportApp {
         JavaPairRDD<Tuple2<String, String>, Flight> flights = flightsFile
                 .filter(str -> !str.contains(YEAR))
                 .mapToPair(str -> {
-                    String[] lineParts = str.split(DELIMITER_COMMA);
+                    String[] lineParts = str.split(DELIMITER_COMMA_WITH_QUOTES);
+                    Arrays.stream(lineParts).map(s -> s.replaceAll("\"", ""));
                     String originPort = lineParts[ORIGIIN_AIRPORT];
                     String destPort = lineParts[DEST_AIRPORT];
                     String delay = lineParts[DELAY_TIME_INDEX];
