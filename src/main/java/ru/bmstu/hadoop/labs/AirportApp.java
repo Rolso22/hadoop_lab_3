@@ -24,7 +24,7 @@ public class AirportApp {
         JavaRDD<String> flightsFile = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaPairRDD<Tuple2<String, String>, Flight> flights = flightsFile
                 .filter(str -> !str.contains(YEAR))
-                .flatMapToPair(str -> {
+                .mapToPair(str -> {
                     String[] lineParts = str.split(DELIMITER_COMMA);
                     
 
