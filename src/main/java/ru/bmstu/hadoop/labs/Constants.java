@@ -9,4 +9,5 @@ public class Constants {
     public static final int DESCRIPTION_INDEX = 1;
     public static final String DELIMITER_COMMA_WITH_QUOTES = "\",\"";
     public static final String DELIMITER_COMMA = ",";
+    public static final String CODE = "code";
 }

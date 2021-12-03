@@ -6,6 +6,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
 
+import static ru.bmstu.hadoop.labs.Constants.*;
 import java.util.Map;
 
 public class AirportApp {
@@ -14,16 +15,16 @@ public class AirportApp {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> airportFile = sc.textFile("L_AIRPORT_ID.csv");
         Map<String, String> airportMap = airportFile
-                .filter(str -> str)
+                .filter(str -> !str.contains(CODE))
                 .mapToPair(str -> {
-                    String[] lineParts = str.split(",");
-                    return new Tuple2<>(lineParts[0], lineParts[1]);
+                    String[] lineParts = str.split(DELIMITER_COMMA);
+                    return new Tuple2<>(lineParts[CODE_INDEX], lineParts[DESCRIPTION_INDEX]);
                 }).collectAsMap();
 
         JavaRDD<String> flightsFile = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaPairRDD<Tuple2<String, String>, Flight> flights = flightsFile.flatMapToPair(str -> {
             String[] lineParts = str.split(",");
-
+            
         });
     }
 }
