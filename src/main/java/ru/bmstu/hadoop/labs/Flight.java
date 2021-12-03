@@ -35,7 +35,8 @@ public class Flight implements Serializable {
     }
 
     public Flight mergeValues(String delay) {
-        
+        Flight flight = Flight.createFlight(delay);
+        return this.mergeCombine(flight);
     }
 
     public static String getResult(Tuple2<Tuple2<String, String>, Flight> ports, Map<String, String> map) {
