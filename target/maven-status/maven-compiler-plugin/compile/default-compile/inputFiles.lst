@@ -1,0 +1,6 @@
+/home/ramagf/IdeaProjects/hadoop_lab_3/src/main/java/ru/bmstu/hadoop/labs/AirportApp.java
+/home/ramagf/IdeaProjects/hadoop_lab_3/src/main/java/ru/bmstu/hadoop/labs/Flight.java
+/home/ramagf/IdeaProjects/hadoop_lab_3/src/main/java/ru/bmstu/hadoop/labs/CreateCombiner.java
+/home/ramagf/IdeaProjects/hadoop_lab_3/src/main/java/ru/bmstu/hadoop/labs/Constants.java
+/home/ramagf/IdeaProjects/hadoop_lab_3/src/main/java/ru/bmstu/hadoop/labs/MergeCombiners.java
+/home/ramagf/IdeaProjects/hadoop_lab_3/src/main/java/ru/bmstu/hadoop/labs/MergeValue.java
