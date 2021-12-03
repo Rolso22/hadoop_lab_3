@@ -31,6 +31,6 @@ public class AirportApp {
                     String delay = lineParts[DELAY_TIME_INDEX];
                     return new Tuple2<>(new Tuple2<>(originPort, destPort), delay);
                 })
-                .combineByKey(new CreateCombiner, new MergeValue, new MergeCombiners);
+                .combineByKey(new CreateCombiner(), new MergeValue(), new MergeCombiners());
     }
 }
