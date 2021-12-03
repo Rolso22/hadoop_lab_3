@@ -26,8 +26,11 @@ public class AirportApp {
                 .filter(str -> !str.contains(YEAR))
                 .mapToPair(str -> {
                     String[] lineParts = str.split(DELIMITER_COMMA);
-                    String originPort = str[]
+                    String originPort = lineParts[ORIGIIN_AIRPORT];
+                    String destPort = lineParts[DEST_AIRPORT];
+                    float delay = 
 
-        });
+
+                });
     }
 }
