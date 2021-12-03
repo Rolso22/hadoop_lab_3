@@ -10,9 +10,7 @@ import scala.Tuple2;
 import static ru.bmstu.hadoop.labs.Constants.*;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class AirportApp {
     public static void main(String[] args) {
@@ -22,16 +20,16 @@ public class AirportApp {
         Map<String, String> airportMap = airportFile
                 .filter(str -> !str.contains(CODE))
                 .mapToPair(str -> {
-                    String[] lineParts = str.split(DELIMITER_COMMA);
-                    return new Tuple2<>(lineParts[CODE_INDEX], lineParts[DESCRIPTION_INDEX]);
+                    String[] lineParts = str.split(DELIMITER_COMMA_WITH_QUOTES);
+
+                    return new Tuple2<>(deleteQuotes(lineParts[CODE_INDEX]), lineParts[DESCRIPTION_INDEX]);
                 }).collectAsMap();
 
         JavaRDD<String> flightsFile = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaPairRDD<Tuple2<String, String>, Flight> flights = flightsFile
                 .filter(str -> !str.contains(YEAR))
                 .mapToPair(str -> {
-                    String[] lineParts = str.split(DELIMITER_COMMA_WITH_QUOTES);
-                    lineParts = Arrays.stream(lineParts).map(x -> x.replaceAll("\'", "")).collect(Collectors.toList());
+                    String[] lineParts = str.split(DELIMITER_COMMA;
                     String originPort = lineParts[ORIGIIN_AIRPORT];
                     String destPort = lineParts[DEST_AIRPORT];
                     String delay = lineParts[DELAY_TIME_INDEX];
@@ -41,6 +39,10 @@ public class AirportApp {
         final Broadcast<Map<String, String>> airportsBroadcasted = sc.broadcast(airportMap);
         JavaRDD<String> result = flights.map(ports -> Flight.getResult(ports, airportsBroadcasted.getValue()));
         result.saveAsTextFile("result");
+    }
+
+    private String deleteQuotes(String str) {
+        return str.replaceAll("\"", "");
     }
 
 }
