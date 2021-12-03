@@ -5,6 +5,19 @@ import java.io.Serializable;
 public class Flight implements Serializable {
     private float maxDelay;
     private boolean isCancelled;
-    private int delayCount;
-    private int 
+    private int delayedCount;
+    private int cancelledCount;
+    private int flightCount;
+
+    public Flight(float maxDelay, boolean isCancelled, int delayedCount, int cancelledCount, int flightCount) {
+        this.maxDelay = maxDelay;
+        this.isCancelled = isCancelled;
+        this.delayedCount = delayedCount;
+        this.cancelledCount = cancelledCount;
+        this.flightCount = flightCount;
+    }
+
+    public static void createFlight(String delay) {
+        
+    }
 }
