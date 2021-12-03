@@ -13,7 +13,9 @@ public class AirportApp {
         SparkConf conf = new SparkConf().setAppName("AirportApp_lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> airportFile = sc.textFile("L_AIRPORT_ID.csv");
-        Map<String, String> airportMap = airportFile.mapToPair(str -> {
+        Map<String, String> airportMap = airportFile
+                .filter(str -> str)
+                .mapToPair(str -> {
                     String[] lineParts = str.split(",");
                     return new Tuple2<>(lineParts[0], lineParts[1]);
                 }).collectAsMap();
