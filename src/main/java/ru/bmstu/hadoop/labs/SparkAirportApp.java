@@ -10,7 +10,7 @@ import scala.Tuple2;
 import static ru.bmstu.hadoop.labs.Constants.*;
 import java.util.Map;
 
-public class AirportApp {
+public class SparkAirportApp {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("AirportApp_lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
