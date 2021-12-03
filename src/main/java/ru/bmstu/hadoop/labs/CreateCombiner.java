@@ -7,6 +7,6 @@ public class CreateCombiner implements Function<String, Flight> {
 
     @Override
     public Flight call(String delay) throws Exception {
-        return null;
+        return Flight.createFlight(delay);
     }
 }
