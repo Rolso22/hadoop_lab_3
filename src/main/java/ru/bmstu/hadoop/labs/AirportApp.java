@@ -25,8 +25,8 @@ public class AirportApp {
         JavaPairRDD<Tuple2<String, String>, Flight> flights = flightsFile
                 .filter(str -> !str.contains(YEAR))
                 .flatMapToPair(str -> {
-                    String[] lineParts = str.split(",");
-
+                    String[] lineParts = str.split(DELIMITER_COMMA);
+                    
 
         });
     }
