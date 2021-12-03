@@ -1,5 +1,7 @@
 package ru.bmstu.hadoop.labs;
 
+import scala.Tuple2;
+
 import java.io.Serializable;
 
 public class Flight implements Serializable {
@@ -30,5 +32,5 @@ public class Flight implements Serializable {
         return this;
     }
 
-    public static String getResult()
+    public static String getResult(Tuple2<Tuple2<String, String>, Flight> )
 }
