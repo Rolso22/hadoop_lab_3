@@ -19,6 +19,6 @@ public class AirportApp {
                 }).collectAsMap();
 
         JavaRDD<String> flights = sc.textFile("664600583_T_ONTIME_sample.csv");
-        JavaPairRDD<>
+        JavaPairRDD<Tuple2<String, String>, Flight>
     }
 }
