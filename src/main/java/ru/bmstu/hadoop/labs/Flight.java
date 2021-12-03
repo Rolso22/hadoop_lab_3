@@ -30,5 +30,5 @@ public class Flight implements Serializable {
         return this;
     }
 
-    public static 
+    public static String getResult()
 }
