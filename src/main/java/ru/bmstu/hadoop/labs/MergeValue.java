@@ -6,6 +6,6 @@ public class MergeValue implements Function2<Flight, String, Flight> {
 
     @Override
     public Flight call(Flight flight, String delay) throws Exception {
-        return null;
+        return flight.mergeValues(delay);
     }
 }

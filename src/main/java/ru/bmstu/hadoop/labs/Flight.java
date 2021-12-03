@@ -1,5 +1,6 @@
 package ru.bmstu.hadoop.labs;
 
+import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import scala.Tuple2;
 
 import java.io.Serializable;
@@ -33,7 +34,11 @@ public class Flight implements Serializable {
         return this;
     }
 
-    public static String getResult(Tuple2<Tuple2<String, String>, Flight> ports, Map<String, String> map) {
+    public Flight mergeValues(String delay) {
         
+    }
+
+    public static String getResult(Tuple2<Tuple2<String, String>, Flight> ports, Map<String, String> map) {
+        return null;
     }
 }
