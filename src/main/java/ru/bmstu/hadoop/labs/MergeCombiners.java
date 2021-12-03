@@ -6,6 +6,6 @@ public class MergeCombiners implements Function2<Flight, Flight, Flight> {
 
     @Override
     public Flight call(Flight flight1, Flight flight2) throws Exception {
-        return null;
+        return flight1.mergeCombine(flight2);
     }
 }
