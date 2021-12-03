@@ -28,15 +28,8 @@ public class AirportApp {
                     String[] lineParts = str.split(DELIMITER_COMMA);
                     String originPort = lineParts[ORIGIIN_AIRPORT];
                     String destPort = lineParts[DEST_AIRPORT];
-                    float delay;
-                    try {
-                        delay = Float.parseFloat(lineParts[DELAY_TIME_INDEX]);
-                    } catch (Exception e) {
-                        delay = 0.0f;
-                    }
-
-
-
+                    String delay = lineParts[DELAY_TIME_INDEX];
+                    return new Tuple2<>()
                 });
     }
 }
