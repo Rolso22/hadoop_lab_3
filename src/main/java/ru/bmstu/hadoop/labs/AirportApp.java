@@ -29,7 +29,8 @@ public class AirportApp {
                     String originPort = lineParts[ORIGIIN_AIRPORT];
                     String destPort = lineParts[DEST_AIRPORT];
                     String delay = lineParts[DELAY_TIME_INDEX];
-                    return new Tuple2<>()
-                });
+                    return new Tuple2<>(new Tuple2<>(originPort, destPort), delay);
+                })
+                .combineByKey();
     }
 }
