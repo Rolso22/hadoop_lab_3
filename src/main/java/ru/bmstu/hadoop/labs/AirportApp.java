@@ -8,8 +8,6 @@ import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
 import static ru.bmstu.hadoop.labs.Constants.*;
-
-import java.util.Arrays;
 import java.util.Map;
 
 public class AirportApp {
@@ -21,16 +19,15 @@ public class AirportApp {
                 .filter(str -> !str.contains(CODE))
                 .mapToPair(str -> {
                     String[] lineParts = str.split(DELIMITER_COMMA_WITH_QUOTES);
-
-                    return new Tuple2<>(deleteQuotes(lineParts[CODE_INDEX]), lineParts[DESCRIPTION_INDEX]);
+                    return new Tuple2<>(deleteQuotes(lineParts[CODE_INDEX]), deleteQuotes(lineParts[DESCRIPTION_INDEX]));
                 }).collectAsMap();
 
         JavaRDD<String> flightsFile = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaPairRDD<Tuple2<String, String>, Flight> flights = flightsFile
                 .filter(str -> !str.contains(YEAR))
                 .mapToPair(str -> {
-                    String[] lineParts = str.split(DELIMITER_COMMA;
-                    String originPort = lineParts[ORIGIIN_AIRPORT];
+                    String[] lineParts = str.split(DELIMITER_COMMA);
+                    String originPort = lineParts[ORIGIN_AIRPORT];
                     String destPort = lineParts[DEST_AIRPORT];
                     String delay = lineParts[DELAY_TIME_INDEX];
                     return new Tuple2<>(new Tuple2<>(originPort, destPort), delay);
@@ -41,7 +38,7 @@ public class AirportApp {
         result.saveAsTextFile("result");
     }
 
-    private String deleteQuotes(String str) {
+    private static String deleteQuotes(String str) {
         return str.replaceAll("\"", "");
     }
 
