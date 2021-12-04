@@ -46,6 +46,6 @@ public class Flight implements Serializable {
         return originPort + " -> " + destPort + "\n" +
                 "\tmaxDelay: " + maxDelay + "\n" +
                 "\tdelayed: " + delayedProportion + "\n" +
-                "\tcancelled" + cancelledProportion + "\n\n";
+                "\tcancelled: " + cancelledProportion + "\n\n";
     }
 }
