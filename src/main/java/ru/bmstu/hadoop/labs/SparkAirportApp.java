@@ -8,6 +8,8 @@ import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
 import static ru.bmstu.hadoop.labs.Constants.*;
+
+import java.util.Arrays;
 import java.util.Map;
 
 public class SparkAirportApp {
@@ -19,6 +21,7 @@ public class SparkAirportApp {
                 .filter(str -> !str.contains(CODE))
                 .mapToPair(str -> {
                     String[] lineParts = str.split(DELIMITER_COMMA_WITH_QUOTES);
+                    //if (!str.isEmpty()) throw new Exception(Arrays.toString(lineParts) + " " + lineParts.length + " " + str);
                     return new Tuple2<>(deleteQuotes(lineParts[CODE_INDEX]), deleteQuotes(lineParts[DESCRIPTION_INDEX]));
                 }).collectAsMap();
 

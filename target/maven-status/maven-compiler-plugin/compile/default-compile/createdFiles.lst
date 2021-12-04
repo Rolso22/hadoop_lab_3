@@ -1,6 +1,6 @@
+ru/bmstu/hadoop/labs/SparkAirportApp.class
 ru/bmstu/hadoop/labs/MergeCombiners.class
 ru/bmstu/hadoop/labs/CreateCombiner.class
-ru/bmstu/hadoop/labs/AirportApp.class
 ru/bmstu/hadoop/labs/Constants.class
 ru/bmstu/hadoop/labs/Flight.class
 ru/bmstu/hadoop/labs/MergeValue.class
